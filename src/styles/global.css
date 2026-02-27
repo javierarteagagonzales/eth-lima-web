@@ -1,0 +1,70 @@
+/* Import Inter as a fallback for Helvetica - MUST BE TOP LEVEL */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #1C75BC;
+    --color-primary-dark: #0071BC;
+    --color-secondary: #000000;
+    --color-accent: #E94E1B;
+    --color-teal: #008D7D;
+
+    --font-sans: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif;
+
+    --spacing-1: 0.25rem;
+    /* 4px */
+    --spacing-2: 0.5rem;
+    /* 8px */
+    --spacing-4: 1rem;
+    /* 16px */
+    --spacing-6: 1.5rem;
+    /* 24px */
+    --spacing-8: 2rem;
+    /* 32px */
+    --spacing-12: 3rem;
+    /* 48px */
+    --spacing-16: 4rem;
+    /* 64px */
+    --spacing-24: 6rem;
+    /* 96px */
+
+    --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -2px rgba(0, 0, 0, 0.05);
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        @apply antialiased;
+    }
+
+    body {
+        @apply font-sans bg-white text-black;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply tracking-tighter font-bold leading-[0.9];
+    }
+
+    p {
+        @apply leading-tight;
+    }
+}
+
+@layer components {
+    .glass {
+        @apply bg-white/70 backdrop-blur-md border border-white/20;
+    }
+
+    .keen-slider {
+        @apply flex overflow-hidden select-none touch-pan-y w-full;
+    }
+
+    .keen-slider__slide {
+        @apply relative shrink-0 w-full min-h-full;
+    }
+}

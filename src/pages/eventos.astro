@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import EventHero from "../components/EventHero.astro";
+import EventCard from "../components/EventCard.astro";
+import PartnersSlider from "../components/PartnersSlider.astro";
+import Footer from "../components/Footer.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+
+const communityEvents = [
+	{ 
+		name: "Nombre del evento", 
+		description: "Descripción del evento", 
+		date: "Fecha y hora", 
+		communities: "Comunidad(es)" 
+	},
+	{ 
+		name: "Nombre del evento", 
+		description: "Descripción del evento", 
+		date: "Fecha y hora", 
+		communities: "Comunidad(es)" 
+	},
+	{ 
+		name: "Nombre del evento", 
+		description: "Descripción del evento", 
+		date: "Fecha y hora", 
+		communities: "Comunidad(es)" 
+	},
+	{ 
+		name: "Nombre del evento", 
+		description: "Descripción del evento", 
+		date: "Fecha y hora", 
+		communities: "Comunidad(es)" 
+	},
+];
+---
+
+<BaseLayout title="Eventos - Ethereum Lima">
+	<Navbar />
+	<main>
+		<EventHero 
+			date="20 de Mayo de 2026" 
+			title="Lorem Ipsum is simply dummy text" 
+			location="Villa deportiva nacional." 
+			address="Av del Aire s/n, Lima" 
+		/>
+
+		<SectionContainer class="py-24 flex flex-col items-center justify-center min-h-[70vh]">
+			<div class="flex flex-col gap-10 w-full max-w-4xl mx-auto">
+				<h2 class="text-4xl md:text-5xl font-bold text-black text-center leading-[0.9]">
+					Los eventos de la <br/> comunidad
+				</h2>
+				
+				<div class="bg-neutral-100 rounded-[50px] p-6 md:p-12 flex flex-col gap-6 shadow-sm">
+					{communityEvents.map(event => (
+						<EventCard {...event} />
+					))}
+				</div>
+			</div>
+		</SectionContainer>
+
+		<PartnersSlider />
+	</main>
+	<Footer />
+</BaseLayout>

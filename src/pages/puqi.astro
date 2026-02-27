@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import PuqiHero from "../components/PuqiHero.astro";
+import PuqiSplitSection from "../components/PuqiSplitSection.astro";
+import SimpleTextSection from "../components/SimpleTextSection.astro";
+import MissionSection from "../components/MissionSection.astro";
+import PuqiGallery from "../components/PuqiGallery.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout title="Puqi - Ethereum Lima">
+	<Navbar />
+	<main>
+		<PuqiHero />
+		<PuqiSplitSection />
+		<SimpleTextSection 
+			title="Lorem Ipsum is simply dummy text" 
+			description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been"
+		/>
+		<MissionSection />
+		<PuqiGallery />
+	</main>
+	<Footer />
+</BaseLayout>

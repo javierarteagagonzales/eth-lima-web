@@ -1,0 +1,23 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+import Button from "./Button.astro";
+---
+
+<SectionContainer class="min-h-screen flex items-center pt-48 pb-24">
+	<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-end max-w-6xl mx-auto w-full">
+		<div class="lg:col-span-8">
+			<h1 class="text-6xl md:text-8xl lg:text-[100px] font-bold leading-[0.85] tracking-tighter text-black">
+				Contenido para aprender <br/> y crecer en la <br/> comunidad
+			</h1>
+		</div>
+		
+		<div class="lg:col-span-4 flex flex-col gap-6 lg:pb-4">
+			<p class="text-2xl md:text-3xl font-bold leading-[0.9] tracking-tighter text-black">
+				Únete a nuestros canales para conocer a los otros miembros
+			</p>
+			<Button variant="secondary" size="lg" class="px-8 py-3 text-sm rounded-xl self-start font-bold uppercase tracking-widest">
+				Seguir a la comunidad
+			</Button>
+		</div>
+	</div>
+</SectionContainer>

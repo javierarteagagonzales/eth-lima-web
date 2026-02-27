@@ -1,0 +1,15 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<SectionContainer class="min-h-screen flex items-center justify-center pt-32 pb-12">
+	<h1 class="text-7xl md:text-[120px] lg:text-[140px] font-bold tracking-tight text-black text-center leading-none">
+		{title}
+	</h1>
+</SectionContainer>

@@ -1,0 +1,29 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+import FeatureCard from "./FeatureCard.astro";
+
+const coreTeam = [
+	{ nickname: "Nickname", name: "Nombre y Apellido", role: "Technical Education" },
+	{ nickname: "Nickname", name: "Nombre y Apellido", role: "Technical Education" },
+	{ nickname: "Nickname", name: "Nombre y Apellido", role: "Technical Education" },
+	{ nickname: "Nickname", name: "Nombre y Apellido", role: "Technical Education" },
+	{ nickname: "Nickname", name: "Nombre y Apellido", role: "Technical Education" },
+	{ nickname: "Nickname", name: "Nombre y Apellido", role: "Technical Education" },
+];
+---
+
+<SectionContainer id="core-team" class="flex flex-col items-center justify-center min-h-[60vh] py-24">
+	<div class="flex flex-col gap-10 w-full max-w-4xl mx-auto">
+		<div class="flex items-center gap-4">
+			<h2 class="text-4xl md:text-5xl font-bold text-black leading-none">Core <span class="text-primary italic">Team</span></h2>
+			<div class="h-[1px] flex-grow bg-neutral-100 hidden md:block"></div>
+		</div>
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center">
+			{coreTeam.map(member => (
+				<div class="flex justify-center">
+					<FeatureCard {...member} class="w-full max-w-[280px]" />
+				</div>
+			))}
+		</div>
+	</div>
+</SectionContainer>

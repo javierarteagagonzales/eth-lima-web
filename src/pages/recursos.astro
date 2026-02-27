@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import RecursosHero from "../components/RecursosHero.astro";
+import BrandKitSection from "../components/BrandKitSection.astro";
+import ResourceLinkGrid from "../components/ResourceLinkGrid.astro";
+import PapersGrid from "../components/PapersGrid.astro";
+import PartnersSlider from "../components/PartnersSlider.astro";
+import Footer from "../components/Footer.astro";
+
+const oficiales = [
+	{ title: "Ethereum Org." },
+	{ title: "Ethereum foundation" },
+	{ title: "Glosario Ethereum" },
+];
+
+const ethereumResources = [
+	{ title: "Ethereum Org." },
+	{ title: "Ethereum foundation" },
+	{ title: "Glosario Ethereum" },
+	{ title: "Ethereum Org." },
+	{ title: "Ethereum foundation" },
+	{ title: "Glosario Ethereum" },
+];
+
+const aprenderResources = [
+	{ title: "Ethereum Org." },
+	{ title: "Ethereum foundation" },
+	{ title: "Glosario Ethereum" },
+	{ title: "Glosario Ethereum" },
+	{ title: "Ethereum Org." },
+	{ title: "Ethereum foundation" },
+	{ title: "Glosario Ethereum" },
+	{ title: "Glosario Ethereum" },
+];
+
+const papers = [
+	{ title: "White paper de Ethereum" },
+	{ title: "White paper de Ethereum", subtitle: "Español" },
+	{ title: "Yellow paper" },
+	{ title: "Mastering Ethereum" },
+];
+---
+
+<BaseLayout title="Recursos - Ethereum Lima">
+	<Navbar />
+	<main>
+		<RecursosHero />
+		<BrandKitSection />
+		
+		<ResourceLinkGrid 
+			title="Web oficiales de Ethereum" 
+			resources={oficiales} 
+		/>
+		
+		<ResourceLinkGrid 
+			title="Ethereum" 
+			resources={ethereumResources} 
+		/>
+
+		<ResourceLinkGrid 
+			title="Aprender a programar" 
+			description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+			resources={aprenderResources}
+			variant="light"
+		/>
+
+		<PapersGrid title="Libros y papers" papers={papers} />
+
+		<PartnersSlider />
+	</main>
+	<Footer />
+</BaseLayout>

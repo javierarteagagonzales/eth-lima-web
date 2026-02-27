@@ -1,0 +1,33 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+---
+
+<SectionContainer class="py-16 md:py-20 flex items-center justify-center">
+	<div class="flex flex-col gap-8 w-full max-w-5xl">
+		<h2 class="text-3xl md:text-4xl font-bold max-w-xl leading-[0.9]">
+			Lorem Ipsum is simply <br/> dummy text of the printing.
+		</h2>
+
+		<div class="w-full aspect-[21/9] bg-[#444444] rounded-[50px] shadow-2xl relative overflow-hidden flex items-center justify-between px-8 group">
+			<button class="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+			</button>
+			
+			<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2.5">
+				<div class="w-2 h-2 bg-white rounded-full"></div>
+				<div class="w-2 h-2 bg-white/30 rounded-full"></div>
+				<div class="w-2 h-2 bg-white/30 rounded-full"></div>
+			</div>
+
+			<button class="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+			</button>
+		</div>
+
+		<div class="flex flex-col items-end gap-1 text-right self-end">
+			<p class="text-[11px] md:text-sm text-neutral-500 font-medium max-w-xs leading-tight">
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+			</p>
+		</div>
+	</div>
+</SectionContainer>

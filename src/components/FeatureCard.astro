@@ -1,0 +1,37 @@
+---
+interface Props {
+	nickname: string;
+	name: string;
+	role: string;
+	image?: string;
+	horizontal?: boolean;
+	class?: string;
+}
+
+const { nickname, name, role, horizontal = false, class: className } = Astro.props;
+---
+
+<div class:list={[
+	"bg-white rounded-3xl p-5 shadow-soft border border-neutral-100 hover:shadow-xl transition-all duration-300 group",
+	horizontal ? "flex flex-col sm:flex-row gap-5 items-center" : "flex flex-col gap-3 text-center items-center justify-center",
+	className
+]}>
+	<div class:list={[
+		"bg-neutral-200 rounded-2xl overflow-hidden relative",
+		horizontal ? "w-20 h-20 shrink-0" : "aspect-square w-2/3 mx-auto"
+	]}>
+		<!-- Image Simulation -->
+		<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent group-hover:from-primary/20 transition-colors"></div>
+	</div>
+
+	<div class:list={["flex flex-col flex-grow", (!horizontal) ? "items-center" : "items-center sm:items-start text-center sm:text-left"]}>
+		<h4 class="text-lg font-bold text-black leading-[0.9]">{nickname}</h4>
+		<p class="text-[10px] font-medium text-neutral-500 mb-1 leading-tight">{name}</p>
+		<p class="text-[10px] font-bold text-primary uppercase tracking-wider leading-tight">{role}</p>
+		
+		<div class:list={["flex gap-2 mt-3 opacity-30 group-hover:opacity-100 transition-opacity", (!horizontal) ? "justify-center" : "justify-center sm:justify-start"]}>
+			<div class="w-4 h-4 bg-black rounded-full"></div>
+			<div class="w-4 h-4 bg-black rounded-full"></div>
+		</div>
+	</div>
+</div>

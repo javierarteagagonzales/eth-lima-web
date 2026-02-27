@@ -1,0 +1,50 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+---
+
+<SectionContainer class="py-16 md:py-24">
+	<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center max-w-6xl mx-auto">
+		<!-- Left Side: Text -->
+		<div class="lg:col-span-4 flex flex-col gap-6">
+			<h2 class="text-5xl md:text-6xl font-bold leading-[0.85] tracking-tighter text-black">
+				Lorem <br/>
+				Ipsum is <br/>
+				simply <br/>
+				dummy text
+			</h2>
+			<div class="flex flex-col gap-3 text-neutral-500 font-medium leading-tight text-base">
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been dummy text of the printing and typesetting industry.</p>
+			</div>
+		</div>
+
+		<!-- Right Side: Content Box -->
+		<div class="lg:col-span-8 flex gap-6 items-start">
+			<!-- Large Gray Box -->
+			<div class="flex-grow bg-neutral-100 rounded-[50px] p-6 md:p-10 aspect-[4/3] relative overflow-hidden flex items-center justify-center">
+				<div class="w-full h-full flex items-center justify-center gap-5">
+					<div class="w-1/4 h-full flex flex-col gap-4 py-6">
+						<div class="w-full aspect-video bg-neutral-200 rounded-2xl"></div>
+						<div class="w-full flex-grow bg-neutral-200 rounded-2xl"></div>
+					</div>
+					<div class="flex-grow h-3/4 bg-neutral-700 rounded-[40px] shadow-2xl relative">
+						<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
+					</div>
+					<div class="w-1/4 h-full flex flex-col gap-4 py-6">
+						<div class="w-full flex-grow bg-neutral-200 rounded-2xl"></div>
+						<div class="w-full aspect-video bg-neutral-200 rounded-2xl"></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Version List Sidebar -->
+			<div class="hidden md:flex flex-col gap-3 mt-6">
+				{[1, 2, 3, 4].map(() => (
+					<div class="bg-white p-2.5 rounded-xl shadow-sm border border-neutral-50 flex flex-col gap-2 items-center group cursor-pointer hover:shadow-md transition-all">
+						<div class="w-12 h-12 bg-neutral-200 rounded-lg group-hover:bg-primary/10 transition-colors"></div>
+						<span class="text-[7px] font-bold uppercase tracking-widest text-black leading-none">Ver. 0001</span>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</SectionContainer>

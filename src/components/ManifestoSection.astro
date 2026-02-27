@@ -1,0 +1,24 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+---
+
+<SectionContainer id="manifiesto" class="bg-neutral-50 py-24 min-h-screen flex items-center justify-center">
+	<div class="flex flex-col items-center text-center gap-12 max-w-4xl mx-auto w-full">
+		<!-- Typography Content -->
+		<div class="flex flex-col gap-6">
+			<h2 class="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] text-black">
+				Nuestro <br/> <span class="text-primary italic">Manifiesto</span>
+			</h2>
+			<p class="text-xl md:text-2xl text-neutral-600 leading-tight font-medium max-w-2xl mx-auto">
+				Creemos en el poder transformador de la tecnología blockchain para construir un futuro más abierto, transparente y equitativo para todos los peruanos.
+			</p>
+		</div>
+
+		<!-- Box Image Detail -->
+		<div class="w-full max-w-[280px] md:max-w-xs aspect-square bg-neutral-800 rounded-[40px] shadow-2xl relative overflow-hidden group mt-4">
+			<div class="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent"></div>
+			<!-- Minimal Detail -->
+			<div class="absolute bottom-8 right-8 w-10 h-10 bg-white/5 backdrop-blur-sm rounded-full border border-white/10"></div>
+		</div>
+	</div>
+</SectionContainer>
