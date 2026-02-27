@@ -20,7 +20,6 @@ jobs:
       - name: Install, build, and upload
         uses: withastro/action@v3
         with:
-          path: eth-lima-web
           node-version: 20
 
   deploy:
