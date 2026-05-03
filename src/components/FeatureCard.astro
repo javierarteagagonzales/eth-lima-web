@@ -21,7 +21,9 @@ const { nickname, name, role, horizontal = false, class: className } = Astro.pro
 		horizontal ? "w-20 h-20 shrink-0" : "aspect-square w-2/3 mx-auto"
 	]}>
 		<!-- Image Simulation -->
-		<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent group-hover:from-primary/20 transition-colors"></div>
+		<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent group-hover:from-primary/20 transition-colors flex items-center justify-center p-4">
+			<img src="/eth-lima-web/logo/EthLima.webp" alt="Logo" class="w-1/2 h-1/2 object-contain opacity-50 group-hover:opacity-100 transition-opacity" />
+		</div>
 	</div>
 
 	<div class:list={["flex flex-col flex-grow", (!horizontal) ? "items-center" : "items-center sm:items-start text-center sm:text-left"]}>
