@@ -48,9 +48,11 @@ const { title, description, resources, variant = "dark" } = Astro.props;
 						</h3>
 					</div>
 					<div class:list={[
-						"w-10 h-10 rounded-full self-end transition-colors",
+						"w-10 h-10 rounded-full self-end transition-colors flex items-center justify-center p-2",
 						variant === "dark" ? "bg-black group-hover:bg-primary" : "bg-neutral-200 group-hover:bg-primary"
-					]}></div>
+					]}>
+						<img src="/eth-lima-web/logo/EthLima.webp" alt="Logo" class="w-full h-full object-contain brightness-0 invert opacity-30 group-hover:opacity-100 transition-opacity" />
+					</div>
 				</div>
 			))}
 		</div>
