@@ -1,5 +1,67 @@
-/* Import Inter as a fallback for Helvetica - MUST BE TOP LEVEL */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+@font-face {
+    font-family: 'Helvetica Neue Custom';
+    src: url('/eth-lima-web/fonts/helvetica-neue-5/HelveticaNeueRoman.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Custom';
+    src: url('/eth-lima-web/fonts/helvetica-neue-5/HelveticaNeueItalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Custom';
+    src: url('/eth-lima-web/fonts/helvetica-neue-5/HelveticaNeueMedium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Custom';
+    src: url('/eth-lima-web/fonts/helvetica-neue-5/HelveticaNeueBold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Custom';
+    src: url('/eth-lima-web/fonts/helvetica-neue-5/HelveticaNeueBlack.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Custom';
+    src: url('/eth-lima-web/fonts/helvetica-neue-5/HelveticaNeueThin.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Custom';
+    src: url('/eth-lima-web/fonts/helvetica-neue-5/HelveticaNeueUltraLight.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Custom';
+    src: url('/eth-lima-web/fonts/helvetica-neue-5/HelveticaNeueLight.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
 @import "tailwindcss";
 
 @theme {
@@ -13,7 +75,7 @@
     --color-bg-1: #0B0D14;
     --color-bg-2: #101324;
 
-    --font-sans: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif;
+    --font-sans: "Helvetica Neue Custom", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
     --spacing-1: 0.25rem;
     /* 4px */
@@ -36,6 +98,10 @@
 }
 
 @layer base {
+    html, body, * {
+        font-family: var(--font-sans);
+    }
+
     html {
         scroll-behavior: smooth;
         @apply antialiased;
