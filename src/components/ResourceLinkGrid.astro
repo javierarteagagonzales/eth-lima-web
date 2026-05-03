@@ -16,10 +16,10 @@ interface Props {
 const { title, description, resources, variant = "dark" } = Astro.props;
 ---
 
-<SectionContainer class:list={["py-24", variant === "light" && "bg-neutral-100"]}>
-	<div class="max-w-6xl mx-auto flex flex-col gap-12">
+<SectionContainer class:list={["pt-40 pb-24 min-h-screen flex items-center", variant === "light" && "bg-neutral-100"]}>
+	<div class="max-w-6xl mx-auto flex flex-col gap-12 w-full">
 		<div class="flex flex-col gap-4 max-w-3xl">
-			<h2 class="text-6xl md:text-8xl font-bold leading-[0.85] tracking-tighter text-black">
+			<h2 class="text-5xl md:text-8xl font-bold leading-[0.85] tracking-tighter text-primary">
 				{title}
 			</h2>
 			{description && (
