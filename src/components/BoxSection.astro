@@ -2,9 +2,16 @@
 import SectionContainer from "./SectionContainer.astro";
 ---
 
-<SectionContainer class="py-16 md:py-32 flex items-center justify-center overflow-hidden">
+<SectionContainer class="min-h-screen pt-40 pb-24 flex items-center justify-center overflow-hidden relative">
+	<div class="absolute inset-0 -z-10">
+		<img 
+			src="/eth-lima-web/img/fondoBoxSection.webp" 
+			alt="Background" 
+			class="w-full h-full object-cover object-center"
+		/>
+	</div>
 	<div class="flex flex-col gap-6 md:gap-10 w-full max-w-5xl mx-auto">
-		<h2 class="text-3xl md:text-5xl font-bold text-center mx-auto leading-[0.85] tracking-tighter">
+		<h2 class="text-3xl md:text-5xl font-bold text-center mx-auto leading-[0.85] tracking-tighter text-white">
 			¿Qué es Ethereum?
 		</h2>
 

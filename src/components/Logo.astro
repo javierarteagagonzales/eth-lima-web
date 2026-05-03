@@ -4,46 +4,12 @@ interface Props {
 	color?: "black" | "white" | "brand";
 }
 
-const { className = "h-8", color = "brand" } = Astro.props;
-
-const colors = {
-	black: "#000000",
-	white: "#FFFFFF",
-	brand: "#4138FF"
-};
-
-const fill = colors[color];
+const { className = "h-8" } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
-<svg 
-	viewBox="0 0 1000 350" 
-	class={className} 
-	xmlns="http://www.w3.org/2000/svg"
-	fill="none"
->
-	<!-- Placeholder SVG for the logo based on the provided image -->
-	<path 
-		d="M80 50 L140 160 L80 270 L20 160 Z" 
-		fill="#E94E1B" 
-	/> <!-- Orange part -->
-	<path 
-		d="M80 80 L120 160 L80 240 L40 160 Z" 
-		fill="#00BCDA" 
-	/> <!-- Blue part -->
-	<path 
-		d="M80 110 L100 160 L80 210 L60 160 Z" 
-		fill="#008D7D" 
-	/> <!-- Teal part -->
-
-	<text 
-		x="180" 
-		y="210" 
-		font-family="'Helvetica Neue Custom', 'Helvetica Neue', Helvetica, Arial, sans-serif" 
-		font-weight="900" 
-		font-size="160" 
-		letter-spacing="-10"
-		fill={fill}
-	>
-		ETHLIMA
-	</text>
-</svg>
+<img 
+	src={`${base}logo/EthLima.webp`} 
+	alt="ETH Lima Logo" 
+	class:list={[className, "w-auto object-contain"]}
+/>

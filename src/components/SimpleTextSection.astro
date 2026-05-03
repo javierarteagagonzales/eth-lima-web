@@ -10,12 +10,12 @@ interface Props {
 const { title, description, class: className } = Astro.props;
 ---
 
-<SectionContainer class:list={["bg-neutral-100 min-h-[50vh] flex items-center justify-center text-center", className]}>
+<SectionContainer class:list={["bg-neutral-100 min-h-screen flex items-center justify-center text-center pt-40 pb-24", className]}>
 	<div class="max-w-3xl mx-auto flex flex-col gap-6">
-		<h2 class="text-3xl md:text-4xl font-bold text-black leading-tight">
+		<h2 class="text-3xl md:text-5xl font-bold text-primary leading-tight tracking-tighter">
 			{title}
 		</h2>
-		<p class="text-xl md:text-2xl text-neutral-600 font-medium leading-relaxed">
+		<p class="text-lg md:text-2xl text-neutral-600 font-medium leading-relaxed">
 			{description}
 		</p>
 	</div>
