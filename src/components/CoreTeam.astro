@@ -1,33 +1,84 @@
 ---
 import SectionContainer from "./SectionContainer.astro";
-import FeatureCard from "./FeatureCard.astro";
+import TeamMemberCard from "./TeamMemberCard.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const coreTeam = [
-	{ nickname: "Nickname", name: "Nombre y Apellido", role: "Technical Education" },
-	{ nickname: "Nickname", name: "Nombre y Apellido", role: "Technical Education" },
-	{ nickname: "Nickname", name: "Nombre y Apellido", role: "Technical Education" },
-	{ nickname: "Nickname", name: "Nombre y Apellido", role: "Technical Education" },
-	{ nickname: "Nickname", name: "Nombre y Apellido", role: "Technical Education" },
-	{ nickname: "Nickname", name: "Nombre y Apellido", role: "Technical Education" },
+	{
+		name: "Yamille Celis",
+		role: "Lead Eth Lima",
+		image: "/eth-lima-web/img/team/yamille.png", // Ubicación sugerida: /img/team/nombre.avif
+		linkedin: "https://www.linkedin.com/in/cycelisgomez/",
+		twitter: "https://x.com/yamiyami_eth",
+	},
+	{
+		name: "Criss Valladares",
+		role: "Operations & Logistics",
+		image: "/eth-lima-web/img/team/Criss.webp",
+		linkedin: "https://www.linkedin.com/in/criss-valladares-6bb765198/",
+		twitter: "https://x.com/mimetista_eth",
+	},
+	{
+		name: "Adolfo Morán",
+		role: "Legal",
+		image: "/eth-lima-web/img/team/adolfo.webp",
+		linkedin: "https://www.linkedin.com/in/adolfo-moran/",
+		twitter: "",
+	},
+	{
+		name: "Arturo Mena",
+		role: "Technical Education",
+		image: "/eth-lima-web/img/team/arturo.webp",
+		linkedin: "",
+		twitter: "",
+	},
+	{
+		name: "Edwin Fernández",
+		role: "DeFi & Onchain Operations",
+		image: "/eth-lima-web/img/team/blid.webp",
+		linkedin: "https://www.linkedin.com/in/edwin-fernandez-grau/",
+		twitter: "https://x.com/blid_eth",
+	},
+	{
+		name: "Kiara Henríquez",
+		role: "Public Relations",
+		image: "/eth-lima-web/img/team/kiara.webp",
+		linkedin: "https://www.linkedin.com/in/kiarahenriquez/",
+		twitter: "",
+	},
 ];
 ---
 
-<SectionContainer id="core-team" class="flex flex-col items-center justify-center min-h-screen pt-40 pb-24">
-	<div class="flex flex-col gap-10 w-full max-w-4xl mx-auto">
+<SectionContainer
+	id="core-team"
+	class="flex flex-col items-center justify-center min-h-screen pt-40 pb-24 bg-white"
+>
+	<div class="flex flex-col gap-12 w-full max-w-4xl mx-auto px-4">
 		<div class="flex items-center gap-4">
-			<h2 class="text-4xl md:text-5xl font-bold text-black leading-none">{t('coreTeam.title')} <span class="text-primary italic">{t('coreTeam.subtitle')}</span></h2>
+			<h2
+				class="text-4xl md:text-5xl font-bold text-black leading-none uppercase tracking-tighter"
+			>
+				{t("coreTeam.title")}
+				<span class="text-primary italic"
+					>{t("coreTeam.subtitle")}
+				</span>
+			</h2>
 			<div class="h-[1px] flex-grow bg-neutral-100 hidden md:block"></div>
 		</div>
-		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center">
-			{coreTeam.map(member => (
-				<div class="flex justify-center">
-					<FeatureCard {...member} class="w-full max-w-[280px]" />
-				</div>
-			))}
+
+		<div
+			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-8 md:gap-x-12 mx-auto"
+		>
+			{
+				coreTeam.map((member) => (
+					<div class="flex justify-center w-full">
+						<TeamMemberCard {...member} />
+					</div>
+				))
+			}
 		</div>
 	</div>
 </SectionContainer>
