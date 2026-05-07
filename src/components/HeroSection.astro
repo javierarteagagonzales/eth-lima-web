@@ -8,10 +8,10 @@ const t = useTranslations(lang);
 const eventDate = new Date("2026-05-20T08:00:00");
 ---
 
-<SectionContainer class="relative min-h-screen flex flex-col items-center justify-center pt-40 pb-16 overflow-hidden">
+<SectionContainer class="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-12 md:pt-32 md:pb-16 overflow-hidden">
 	<!-- Background Image -->
 	<div class="absolute inset-0 -z-10">
-		<div class="absolute inset-0 bg-black/20 z-10"></div> <!-- Subtle overlay for readability -->
+		<div class="absolute inset-0 bg-black/10 z-10"></div>
 		<img 
 			src="/eth-lima-web/img/fondoHero.avif" 
 			alt="Hero Background" 
@@ -22,128 +22,61 @@ const eventDate = new Date("2026-05-20T08:00:00");
 	<!-- Background Decoration -->
 	<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-6xl aspect-square bg-primary/5 blur-[120px] rounded-full -z-10"></div>
 
-	<div
-		class="relative w-full max-w-7xl mx-auto flex flex-col items-center flex-grow justify-center gap-12"
-	>
+	<div class="relative w-full max-w-7xl mx-auto flex flex-col items-center flex-grow justify-center gap-6 md:gap-10">
 		<!-- Lateral Info for Desktop -->
-		<div
-			class="hidden lg:flex absolute inset-x-0 top-1/2 -translate-y-1/2 items-center justify-between pointer-events-none"
-		>
+		<div class="hidden lg:flex absolute inset-x-0 top-1/2 -translate-y-1/2 items-center justify-between pointer-events-none px-4">
 			<div class="flex flex-col gap-1 text-left">
-				<span
-					class="text-3xl md:text-4xl font-bold text-black leading-[0.9] tracking-tighter"
-					>{t("hero.date")}
-				</span>
-				<span
-					class="text-3xl md:text-4xl font-bold text-black leading-[0.9] tracking-tighter"
-					>{t("hero.year")}
-				</span>
+				<span class="text-2xl md:text-3xl font-bold text-black leading-[0.9] tracking-tighter">{t('hero.date')}</span>
+				<span class="text-2xl md:text-3xl font-bold text-black leading-[0.9] tracking-tighter">{t('hero.year')}</span>
 			</div>
-
-			<div class="flex flex-col gap-1 text-right max-w-[200px]">
-				<span
-					class="text-xl font-bold text-black leading-[0.9] tracking-tighter"
-					>{t("hero.location")}
-				</span>
-				<span class="text-sm font-medium text-neutral-500 leading-tight"
-					>{t("hero.address")}
-				</span>
+			
+			<div class="flex flex-col gap-1 text-right max-w-[180px]">
+				<span class="text-lg md:text-xl font-bold text-black leading-[0.9] tracking-tighter">{t('hero.location')}</span>
+				<span class="text-xs font-medium text-neutral-500 leading-tight">{t('hero.address')}</span>
 			</div>
 		</div>
 
 		<!-- Central Content -->
-		<div
-			class="flex flex-col items-center text-center gap-6 md:gap-8 max-w-4xl z-10"
-		>
-			<h1
-				class="text-4xl sm:text-6xl md:text-8xl lg:text-[100px] font-bold leading-[0.85] tracking-tighter text-black"
-				set:html={t("hero.title")}
-			>
+		<div class="flex flex-col items-center text-center gap-4 md:gap-6 max-w-4xl z-10 px-4">
+			<h1 class="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.85] tracking-tighter text-black" set:html={t('hero.title')}>
 			</h1>
-
-			<Button
-				href="#registro"
-				size="lg"
-				class="px-10 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-xl"
-			>
-				{t("hero.cta")}
+			
+			<Button href="#registro" size="md" class="px-8 py-3 rounded-xl text-xs font-bold uppercase tracking-widest shadow-lg">
+				{t('hero.cta')}
 			</Button>
 		</div>
 
 		<!-- Mobile Info (Stacks) -->
-		<div class="flex lg:hidden flex-col items-center gap-6 text-center">
-			<div class="flex flex-col gap-1">
-				<span class="text-2xl font-bold text-black leading-none"
-					>{t("hero.date")} {t("hero.year")}
-				</span>
+		<div class="flex lg:hidden flex-col items-center gap-3 text-center">
+			<div class="flex flex-col gap-0.5">
+				<span class="text-xl font-bold text-black leading-none">{t('hero.date')} {t('hero.year')}</span>
 			</div>
-			<div class="flex flex-col gap-1">
-				<span class="text-base font-bold text-black leading-tight"
-					>{t("hero.location")}
-				</span>
-				<span class="text-xs font-medium text-neutral-500 leading-tight"
-					>{t("hero.address")}
-				</span>
+			<div class="flex flex-col gap-0.5">
+				<span class="text-sm font-bold text-black leading-tight">{t('hero.location')}</span>
+				<span class="text-[10px] font-medium text-neutral-500 leading-tight">{t('hero.address')}</span>
 			</div>
 		</div>
 
 		<!-- Countdown Box -->
-		<div
-			class="w-full max-w-4xl bg-neutral-200 rounded-[40px] md:rounded-[60px] p-8 md:p-12 flex flex-col items-center gap-6 md:gap-8 mt-4 md:mt-20"
-		>
-			<h3
-				class="text-xl md:text-3xl font-bold text-black leading-none tracking-tight"
-			>
-				{t("hero.countdown")}
-			</h3>
-
-			<div
-				id="countdown"
-				class="grid grid-cols-4 gap-6 md:gap-12 text-center items-end"
-			>
-				<div class="flex flex-col gap-2 md:gap-4">
-					<span
-						id="months"
-						class="text-4xl md:text-7xl font-bold text-black leading-none"
-						>00</span
-					>
-					<span
-						class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-500"
-						>{t("hero.months")}
-					</span>
+		<div class="w-full max-w-3xl bg-neutral-200/80 backdrop-blur-sm rounded-[30px] md:rounded-[40px] p-6 md:p-8 flex flex-col items-center gap-4 md:gap-6 mt-2 md:mt-8">
+			<h3 class="text-lg md:text-xl font-bold text-black leading-none tracking-tight">{t('hero.countdown')}</h3>
+			
+			<div id="countdown" class="grid grid-cols-4 gap-4 md:gap-10 text-center items-end">
+				<div class="flex flex-col gap-1 md:gap-2">
+					<span id="months" class="text-3xl md:text-5xl lg:text-6xl font-bold text-black leading-none">00</span>
+					<span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-neutral-500">{t('hero.months')}</span>
 				</div>
-				<div class="flex flex-col gap-2 md:gap-4">
-					<span
-						id="days"
-						class="text-4xl md:text-7xl font-bold text-black leading-none"
-						>00</span
-					>
-					<span
-						class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-500"
-						>{t("hero.days")}
-					</span>
+				<div class="flex flex-col gap-1 md:gap-2">
+					<span id="days" class="text-3xl md:text-5xl lg:text-6xl font-bold text-black leading-none">00</span>
+					<span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-neutral-500">{t('hero.days')}</span>
 				</div>
-				<div class="flex flex-col gap-2 md:gap-4">
-					<span
-						id="hours"
-						class="text-4xl md:text-7xl font-bold text-black leading-none"
-						>00</span
-					>
-					<span
-						class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-500"
-						>{t("hero.hours")}
-					</span>
+				<div class="flex flex-col gap-1 md:gap-2">
+					<span id="hours" class="text-3xl md:text-5xl lg:text-6xl font-bold text-black leading-none">00</span>
+					<span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-neutral-500">{t('hero.hours')}</span>
 				</div>
-				<div class="flex flex-col gap-2 md:gap-4">
-					<span
-						id="mins"
-						class="text-4xl md:text-7xl font-bold text-black leading-none"
-						>00</span
-					>
-					<span
-						class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-500"
-						>{t("hero.mins")}
-					</span>
+				<div class="flex flex-col gap-1 md:gap-2">
+					<span id="mins" class="text-3xl md:text-5xl lg:text-6xl font-bold text-black leading-none">00</span>
+					<span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-neutral-500">{t('hero.mins')}</span>
 				</div>
 			</div>
 		</div>

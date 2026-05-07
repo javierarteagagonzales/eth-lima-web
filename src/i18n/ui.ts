@@ -22,7 +22,7 @@ export const ui = {
     'hero.days': 'Días',
     'hero.hours': 'Hora',
     'hero.mins': 'Min',
-    'hero.title': 'Lorem Ipsum es <br class="hidden sm:block"/> simplemente un texto',
+    'hero.title': 'EthLimaDay2026',
     'manifesto.title': 'Manifiesto',
     'manifesto.description': 'Creemos en el poder transformador de la tecnología blockchain para construir un futuro más abierto, transparente y equitativo para todos los peruanos.',
     'coreTeam.title': 'Core',
