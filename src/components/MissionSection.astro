@@ -1,15 +1,19 @@
 ---
 import SectionContainer from "./SectionContainer.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <SectionContainer class="bg-neutral-100 flex flex-col items-center justify-center pt-40 pb-24 min-h-screen">
 	<div class="max-w-4xl w-full flex flex-col gap-10 items-center text-center mx-auto">
 		<h2 class="text-4xl md:text-5xl font-bold text-primary leading-[0.9] underline decoration-primary/30 decoration-8 underline-offset-8">
-			Misión
+			{t('team.mission.title')}
 		</h2>
 		
 		<p class="text-3xl md:text-5xl font-bold text-neutral-800 leading-[0.9] tracking-tighter">
-			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+			{t('team.mission.description')}
 		</p>
 		
 		<div class="w-full max-w-[280px] md:max-w-xs aspect-square bg-black rounded-[30px] shadow-2xl mt-12 overflow-hidden relative">

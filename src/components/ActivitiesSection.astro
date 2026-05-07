@@ -1,6 +1,10 @@
 ---
 import SectionContainer from "./SectionContainer.astro";
 import Button from "./Button.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <SectionContainer class="bg-neutral-50 min-h-screen pt-40 pb-24 flex items-center">
@@ -8,20 +12,20 @@ import Button from "./Button.astro";
 		<!-- Info Side -->
 		<div class="lg:col-span-5 flex flex-col gap-6">
 			<h2 class="text-4xl sm:text-5xl md:text-6xl font-bold text-black leading-[0.85] tracking-tighter">
-				Actividades
+				{t('team.activities.title')}
 			</h2>
 			<p class="text-lg md:text-xl text-neutral-500 font-medium leading-tight">
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+				{t('team.activities.description')}
 			</p>
 
 			<div class="mt-8 group max-w-sm">
-				<h3 class="text-xl font-bold mb-4 uppercase tracking-widest text-black leading-none">Próximo evento</h3>
+				<h3 class="text-xl font-bold mb-4 uppercase tracking-widest text-black leading-none">{t('team.activities.next')}</h3>
 				<div class="aspect-square bg-neutral-800 rounded-[40px] shadow-2xl relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500 flex items-center justify-center p-20">
 					<div class="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent"></div>
 					<img src="/eth-lima-web/logo/EthLima.webp" alt="Logo" class="relative z-10 w-full h-full object-contain opacity-40 group-hover:opacity-100 transition-opacity" />
 				</div>
 				<div class="mt-6 flex justify-center">
-					<Button variant="secondary" size="md" class="px-10 py-3 rounded-xl">Enlace Luma</Button>
+					<Button variant="secondary" size="md" class="px-10 py-3 rounded-xl">{t('team.activities.button')}</Button>
 				</div>
 			</div>
 		</div>
@@ -35,10 +39,10 @@ import Button from "./Button.astro";
 						<img src="/eth-lima-web/logo/EthLima.webp" alt="Logo" class="relative z-10 w-full h-full object-contain opacity-30 group-hover:opacity-100 transition-opacity" />
 					</div>
 					<div class="flex flex-col flex-grow gap-1">
-						<h4 class="text-xl md:text-2xl font-bold text-black leading-[0.9]">Nombre del evento</h4>
+						<h4 class="text-xl md:text-2xl font-bold text-black leading-[0.9]">{t('team.activities.eventName')}</h4>
 						<div class="flex flex-col gap-0.5 mt-2">
-							<span class="text-lg font-bold text-neutral-800 leading-none">Fecha y hora</span>
-							<span class="text-[10px] font-medium text-neutral-400 uppercase tracking-widest leading-none">Modalidad del evento</span>
+							<span class="text-lg font-bold text-neutral-800 leading-none">{t('team.activities.eventDate')}</span>
+							<span class="text-[10px] font-medium text-neutral-400 uppercase tracking-widest leading-none">{t('team.activities.eventMode')}</span>
 						</div>
 					</div>
 					<div class="w-8 h-8 bg-black rounded-full self-end mb-2 group-hover:bg-primary transition-colors flex items-center justify-center p-2">

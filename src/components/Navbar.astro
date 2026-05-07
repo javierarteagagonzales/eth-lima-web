@@ -1,40 +1,62 @@
 ---
 import Logo from "./Logo.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const base = import.meta.env.BASE_URL;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const navLinks = [
-	{ href: `${base}recursos`, label: "Recursos" },
-	{ href: `${base}team`, label: "El team" },
-	{ href: `${base}eventos`, label: "Eventos" },
-	{ href: `${base}puqi`, label: "Puqi" },
-	{ href: `${base}contacto`, label: "Contacto" },
+	{ href: lang === 'es' ? `${base}recursos` : `${base}en/recursos`, label: t('nav.recursos') },
+	{ href: lang === 'es' ? `${base}team` : `${base}en/team`, label: t('nav.team') },
+	{ href: lang === 'es' ? `${base}eventos` : `${base}en/eventos`, label: t('nav.eventos') },
+	{ href: lang === 'es' ? `${base}puqi` : `${base}en/puqi`, label: t('nav.puqi') },
+	{ href: lang === 'es' ? `${base}contacto` : `${base}en/contacto`, label: t('nav.contacto') },
 ];
+
+const currentPath = Astro.url.pathname;
+const toggleLangHref = lang === 'es' 
+	? currentPath.replace(base, `${base}en/`).replace(/\/+$/, '') 
+	: currentPath.replace(`${base}en/`, base).replace(/\/+$/, '');
+
 ---
 
 <header class="fixed top-0 left-0 w-full z-50 flex justify-center p-4">
-	<nav class="max-w-4xl w-full bg-black/90 backdrop-blur-md text-white rounded-full px-8 py-3 flex items-center justify-between border border-white/10 shadow-lg">
+	<nav class="max-w-5xl w-full bg-black/90 backdrop-blur-md text-white rounded-full px-6 md:px-8 py-3 flex items-center justify-between border border-white/10 shadow-lg">
 		<div class="flex items-center gap-2">
-			<a href={base} class="flex items-center gap-2 group">
+			<a href={lang === 'es' ? base : `${base}en/`} class="flex items-center gap-2 group">
 				<Logo className="h-8 md:h-10" color="white" />
 			</a>
 		</div>
 
 		<!-- Desktop Menu -->
-		<ul class="hidden md:flex items-center gap-6">
-			{navLinks.map(link => (
-				<li>
-					<a href={link.href} class="text-[11px] font-bold uppercase tracking-widest hover:text-primary transition-colors">
-						{link.label}
-					</a>
-				</li>
-			))}
-		</ul>
+		<div class="hidden md:flex items-center gap-6">
+			<ul class="flex items-center gap-6">
+				{navLinks.map(link => (
+					<li>
+						<a href={link.href} class="text-[11px] font-bold uppercase tracking-widest hover:text-primary transition-colors">
+							{link.label}
+						</a>
+					</li>
+				))}
+			</ul>
+			
+			<div class="h-4 w-[1px] bg-white/20 ml-2"></div>
+			
+			<a href={toggleLangHref} class="text-[11px] font-bold uppercase tracking-widest hover:text-primary transition-colors px-2 py-1 rounded border border-white/10 bg-white/5">
+				{lang === 'es' ? 'EN' : 'ES'}
+			</a>
+		</div>
 
 		<!-- Mobile Menu Button -->
-		<button id="mobile-menu-btn" class="md:hidden p-2 text-white" aria-label="Menu">
-			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-		</button>
+		<div class="flex items-center gap-2 md:hidden">
+			<a href={toggleLangHref} class="text-[11px] font-bold uppercase tracking-widest hover:text-primary transition-colors px-3 py-1.5 rounded border border-white/10 bg-white/5">
+				{lang === 'es' ? 'EN' : 'ES'}
+			</a>
+			<button id="mobile-menu-btn" class="p-2 text-white" aria-label="Menu">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+			</button>
+		</div>
 	</nav>
 
 	<!-- Mobile Menu Overlay -->

@@ -1,6 +1,10 @@
 ---
 import SectionContainer from "./SectionContainer.astro";
 import Button from "./Button.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 interface Props {
 	title: string;
@@ -27,7 +31,7 @@ const targetDate = new Date("2026-05-20T08:00:00");
 			</h1>
 
 			<!-- Button -->
-			<Button variant="secondary" size="lg" class="px-10 py-4 text-sm font-bold uppercase tracking-widest rounded-xl">Registro para el evento</Button>
+			<Button variant="secondary" size="lg" class="px-10 py-4 text-sm font-bold uppercase tracking-widest rounded-xl">{t('hero.cta')}</Button>
 
 			<!-- Location (Absolute Right) -->
 			<div class="lg:absolute lg:right-0 lg:bottom-0 text-center lg:text-right max-w-[250px]">
@@ -38,26 +42,26 @@ const targetDate = new Date("2026-05-20T08:00:00");
 
 		<!-- Countdown Section -->
 		<div class="mt-16 bg-neutral-200 rounded-[50px] p-8 md:p-12 flex flex-col items-center gap-8 shadow-inner w-full max-w-4xl mx-auto">
-			<h3 class="text-xl md:text-2xl font-bold uppercase tracking-widest leading-[0.9]">Cuenta regresiva:</h3>
+			<h3 class="text-xl md:text-2xl font-bold uppercase tracking-widest leading-[0.9]">{t('hero.countdown')}</h3>
 			<div class="flex gap-4 md:gap-12 text-center items-center">
 				<div class="flex flex-col gap-2">
 					<span class="text-5xl md:text-7xl font-bold leading-none" id="months-hero">00</span>
-					<span class="text-xs font-bold uppercase tracking-widest text-neutral-500">Mes</span>
+					<span class="text-xs font-bold uppercase tracking-widest text-neutral-500">{t('hero.months')}</span>
 				</div>
 				<span class="text-5xl md:text-7xl font-bold leading-none pb-4 md:pb-8">:</span>
 				<div class="flex flex-col gap-2">
 					<span class="text-5xl md:text-7xl font-bold leading-none" id="days-hero">00</span>
-					<span class="text-xs font-bold uppercase tracking-widest text-neutral-500">Días</span>
+					<span class="text-xs font-bold uppercase tracking-widest text-neutral-500">{t('hero.days')}</span>
 				</div>
 				<span class="text-5xl md:text-7xl font-bold leading-none pb-4 md:pb-8">:</span>
 				<div class="flex flex-col gap-2">
 					<span class="text-5xl md:text-7xl font-bold leading-none" id="hours-hero">00</span>
-					<span class="text-xs font-bold uppercase tracking-widest text-neutral-500">Hora</span>
+					<span class="text-xs font-bold uppercase tracking-widest text-neutral-500">{t('hero.hours')}</span>
 				</div>
 				<span class="text-5xl md:text-7xl font-bold leading-none pb-4 md:pb-8">:</span>
 				<div class="flex flex-col gap-2">
 					<span class="text-5xl md:text-7xl font-bold leading-none" id="mins-hero">00</span>
-					<span class="text-xs font-bold uppercase tracking-widest text-neutral-500">Min</span>
+					<span class="text-xs font-bold uppercase tracking-widest text-neutral-500">{t('hero.mins')}</span>
 				</div>
 			</div>
 		</div>

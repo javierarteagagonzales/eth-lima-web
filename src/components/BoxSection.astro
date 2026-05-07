@@ -1,12 +1,16 @@
 ---
 import SectionContainer from "./SectionContainer.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <SectionContainer class="min-h-screen pt-40 pb-24 flex items-center justify-center overflow-hidden relative">
 	<div id="scrolling-background" class="absolute inset-0 -z-10 bg-cover bg-center"></div>
 	<div class="flex flex-col gap-6 md:gap-10 w-full max-w-5xl mx-auto">
 		<h2 class="text-3xl md:text-5xl font-bold text-center mx-auto leading-[0.85] tracking-tighter text-white">
-			¿Qué es Ethereum?
+			{t('box.title')}
 		</h2>
 
 		<div class="w-full aspect-[16/9] md:aspect-[21/9] bg-[#444444] rounded-[30px] md:rounded-[50px] shadow-2xl relative overflow-hidden flex items-center justify-between px-6 md:px-8 group">

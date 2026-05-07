@@ -1,4 +1,9 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 interface Props {
 	name: string;
 	description: string;
@@ -26,6 +31,6 @@ const { name, description, date, communities } = Astro.props;
 	</div>
 
 	<button class="bg-black text-white px-6 py-2 rounded-xl text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors self-center shrink-0">
-		Registro
+		{t('event.register')}
 	</button>
 </div>
