@@ -9,64 +9,141 @@ const eventDate = new Date("2026-05-20T08:00:00");
 ---
 
 <SectionContainer class="relative min-h-screen flex flex-col items-center justify-center pt-40 pb-16 overflow-hidden">
+	<!-- Background Image -->
+	<div class="absolute inset-0 -z-10">
+		<div class="absolute inset-0 bg-black/20 z-10"></div> <!-- Subtle overlay for readability -->
+		<img 
+			src="/eth-lima-web/img/fondoHero.avif" 
+			alt="Hero Background" 
+			class="w-full h-full object-cover object-center"
+		/>
+	</div>
+	
 	<!-- Background Decoration -->
 	<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-6xl aspect-square bg-primary/5 blur-[120px] rounded-full -z-10"></div>
 
-	<div class="relative w-full max-w-7xl mx-auto flex flex-col items-center flex-grow justify-center gap-12">
+	<div
+		class="relative w-full max-w-7xl mx-auto flex flex-col items-center flex-grow justify-center gap-12"
+	>
 		<!-- Lateral Info for Desktop -->
-		<div class="hidden lg:flex absolute inset-x-0 top-1/2 -translate-y-1/2 items-center justify-between pointer-events-none">
+		<div
+			class="hidden lg:flex absolute inset-x-0 top-1/2 -translate-y-1/2 items-center justify-between pointer-events-none"
+		>
 			<div class="flex flex-col gap-1 text-left">
-				<span class="text-3xl md:text-4xl font-bold text-black leading-[0.9] tracking-tighter">{t('hero.date')}</span>
-				<span class="text-3xl md:text-4xl font-bold text-black leading-[0.9] tracking-tighter">{t('hero.year')}</span>
+				<span
+					class="text-3xl md:text-4xl font-bold text-black leading-[0.9] tracking-tighter"
+					>{t("hero.date")}
+				</span>
+				<span
+					class="text-3xl md:text-4xl font-bold text-black leading-[0.9] tracking-tighter"
+					>{t("hero.year")}
+				</span>
 			</div>
-			
+
 			<div class="flex flex-col gap-1 text-right max-w-[200px]">
-				<span class="text-xl font-bold text-black leading-[0.9] tracking-tighter">{t('hero.location')}</span>
-				<span class="text-sm font-medium text-neutral-500 leading-tight">{t('hero.address')}</span>
+				<span
+					class="text-xl font-bold text-black leading-[0.9] tracking-tighter"
+					>{t("hero.location")}
+				</span>
+				<span class="text-sm font-medium text-neutral-500 leading-tight"
+					>{t("hero.address")}
+				</span>
 			</div>
 		</div>
 
 		<!-- Central Content -->
-		<div class="flex flex-col items-center text-center gap-6 md:gap-8 max-w-4xl z-10">
-			<h1 class="text-4xl sm:text-6xl md:text-8xl lg:text-[100px] font-bold leading-[0.85] tracking-tighter text-black" set:html={t('hero.title')}>
+		<div
+			class="flex flex-col items-center text-center gap-6 md:gap-8 max-w-4xl z-10"
+		>
+			<h1
+				class="text-4xl sm:text-6xl md:text-8xl lg:text-[100px] font-bold leading-[0.85] tracking-tighter text-black"
+				set:html={t("hero.title")}
+			>
 			</h1>
-			
-			<Button href="#registro" size="lg" class="px-10 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-xl">
-				{t('hero.cta')}
+
+			<Button
+				href="#registro"
+				size="lg"
+				class="px-10 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-xl"
+			>
+				{t("hero.cta")}
 			</Button>
 		</div>
 
 		<!-- Mobile Info (Stacks) -->
 		<div class="flex lg:hidden flex-col items-center gap-6 text-center">
 			<div class="flex flex-col gap-1">
-				<span class="text-2xl font-bold text-black leading-none">{t('hero.date')} {t('hero.year')}</span>
+				<span class="text-2xl font-bold text-black leading-none"
+					>{t("hero.date")} {t("hero.year")}
+				</span>
 			</div>
 			<div class="flex flex-col gap-1">
-				<span class="text-base font-bold text-black leading-tight">{t('hero.location')}</span>
-				<span class="text-xs font-medium text-neutral-500 leading-tight">{t('hero.address')}</span>
+				<span class="text-base font-bold text-black leading-tight"
+					>{t("hero.location")}
+				</span>
+				<span class="text-xs font-medium text-neutral-500 leading-tight"
+					>{t("hero.address")}
+				</span>
 			</div>
 		</div>
 
 		<!-- Countdown Box -->
-		<div class="w-full max-w-4xl bg-neutral-200 rounded-[40px] md:rounded-[60px] p-8 md:p-12 flex flex-col items-center gap-6 md:gap-8 mt-4 md:mt-20">
-			<h3 class="text-xl md:text-3xl font-bold text-black leading-none tracking-tight">{t('hero.countdown')}</h3>
-			
-			<div id="countdown" class="grid grid-cols-4 gap-6 md:gap-12 text-center items-end">
+		<div
+			class="w-full max-w-4xl bg-neutral-200 rounded-[40px] md:rounded-[60px] p-8 md:p-12 flex flex-col items-center gap-6 md:gap-8 mt-4 md:mt-20"
+		>
+			<h3
+				class="text-xl md:text-3xl font-bold text-black leading-none tracking-tight"
+			>
+				{t("hero.countdown")}
+			</h3>
+
+			<div
+				id="countdown"
+				class="grid grid-cols-4 gap-6 md:gap-12 text-center items-end"
+			>
 				<div class="flex flex-col gap-2 md:gap-4">
-					<span id="months" class="text-4xl md:text-7xl font-bold text-black leading-none">00</span>
-					<span class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-500">{t('hero.months')}</span>
+					<span
+						id="months"
+						class="text-4xl md:text-7xl font-bold text-black leading-none"
+						>00</span
+					>
+					<span
+						class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-500"
+						>{t("hero.months")}
+					</span>
 				</div>
 				<div class="flex flex-col gap-2 md:gap-4">
-					<span id="days" class="text-4xl md:text-7xl font-bold text-black leading-none">00</span>
-					<span class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-500">{t('hero.days')}</span>
+					<span
+						id="days"
+						class="text-4xl md:text-7xl font-bold text-black leading-none"
+						>00</span
+					>
+					<span
+						class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-500"
+						>{t("hero.days")}
+					</span>
 				</div>
 				<div class="flex flex-col gap-2 md:gap-4">
-					<span id="hours" class="text-4xl md:text-7xl font-bold text-black leading-none">00</span>
-					<span class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-500">{t('hero.hours')}</span>
+					<span
+						id="hours"
+						class="text-4xl md:text-7xl font-bold text-black leading-none"
+						>00</span
+					>
+					<span
+						class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-500"
+						>{t("hero.hours")}
+					</span>
 				</div>
 				<div class="flex flex-col gap-2 md:gap-4">
-					<span id="mins" class="text-4xl md:text-7xl font-bold text-black leading-none">00</span>
-					<span class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-500">{t('hero.mins')}</span>
+					<span
+						id="mins"
+						class="text-4xl md:text-7xl font-bold text-black leading-none"
+						>00</span
+					>
+					<span
+						class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-500"
+						>{t("hero.mins")}
+					</span>
 				</div>
 			</div>
 		</div>
@@ -75,7 +152,7 @@ const eventDate = new Date("2026-05-20T08:00:00");
 
 <script define:vars={{ targetDate: eventDate.toISOString() }}>
 	const countDate = new Date(targetDate).getTime();
-	
+
 	const updateCountdown = () => {
 		const now = new Date().getTime();
 		const gap = countDate - now;
@@ -96,10 +173,14 @@ const eventDate = new Date("2026-05-20T08:00:00");
 		const hoursEl = document.getElementById("hours");
 		const minsEl = document.getElementById("mins");
 
-		if (monthsEl) monthsEl.innerText = Math.max(0, mo).toString().padStart(2, '0');
-		if (daysEl) daysEl.innerText = Math.max(0, d).toString().padStart(2, '0');
-		if (hoursEl) hoursEl.innerText = Math.max(0, h).toString().padStart(2, '0');
-		if (minsEl) minsEl.innerText = Math.max(0, m).toString().padStart(2, '0');
+		if (monthsEl)
+			monthsEl.innerText = Math.max(0, mo).toString().padStart(2, "0");
+		if (daysEl)
+			daysEl.innerText = Math.max(0, d).toString().padStart(2, "0");
+		if (hoursEl)
+			hoursEl.innerText = Math.max(0, h).toString().padStart(2, "0");
+		if (minsEl)
+			minsEl.innerText = Math.max(0, m).toString().padStart(2, "0");
 	};
 
 	setInterval(updateCountdown, 60000); // Update every minute since seconds are removed
