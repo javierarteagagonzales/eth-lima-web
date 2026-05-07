@@ -1,29 +1,82 @@
 ---
 import SectionContainer from "./SectionContainer.astro";
-import FeatureCard from "./FeatureCard.astro";
+import CoordinadorCard from "./CoordinadorCard.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const coordinadores = [
-	{ nickname: "Nickname", name: "Nombre y Apellido", role: "Technical Education" },
-	{ nickname: "Nickname", name: "Nombre y Apellido", role: "Technical Education" },
+	{
+		name: "Javier Arteaga",
+		role: "Tecnología y Educación",
+		image: "", // /eth-lima-web/img/team/nombre.avif
+		linkedin: "https://linkedin.com",
+		twitter: "https://twitter.com",
+	},
+	{
+		name: "Alexandra Jaime",
+		role: "Proyecto",
+		image: "",
+		linkedin: "https://linkedin.com",
+		twitter: "https://twitter.com",
+	},
+	{
+		name: "Audi",
+		role: "Comunicaciones y Marketing",
+		image: "",
+		linkedin: "https://linkedin.com",
+		twitter: "https://twitter.com",
+	},
+	{
+		name: "Hristro",
+		role: "Logística",
+		image: "",
+		linkedin: "https://linkedin.com",
+		twitter: "https://twitter.com",
+	},
+	{
+		name: "Ángel Chavez",
+		role: "Logística",
+		image: "",
+		linkedin: "https://linkedin.com",
+		twitter: "https://twitter.com",
+	},
+	{
+		name: "Paul",
+		role: "Bienestar",
+		image: "",
+		linkedin: "https://linkedin.com",
+		twitter: "https://twitter.com",
+	},
 ];
 ---
 
-<SectionContainer id="coordinadores" class="flex flex-col items-center justify-center min-h-screen pt-40 pb-24">
-	<div class="flex flex-col gap-10 w-full max-w-3xl mx-auto">
+<SectionContainer
+	id="coordinadores"
+	class="flex flex-col items-center justify-center min-h-screen pt-40 pb-24 bg-white"
+>
+	<div class="flex flex-col gap-12 w-full max-w-6xl mx-auto px-4 md:px-8">
 		<div class="flex items-center gap-4">
-			<h2 class="text-4xl md:text-5xl font-bold text-black leading-none">{t('coordinadores.title')}</h2>
+			<h2
+				class="text-4xl md:text-5xl font-bold text-black leading-none uppercase tracking-tighter"
+			>
+				{t("coordinadores.title")}
+			</h2>
 			<div class="h-[1px] flex-grow bg-neutral-100 hidden md:block"></div>
 		</div>
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
-			{coordinadores.map(member => (
-				<div class="flex justify-center">
-					<FeatureCard {...member} horizontal={true} class="w-full" />
-				</div>
-			))}
+
+		<!-- Grid de 3 columnas para Coordinadores -->
+		<div
+			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+		>
+			{
+				coordinadores.map((member) => (
+					<div class="flex justify-center w-full">
+						<CoordinadorCard {...member} />
+					</div>
+				))
+			}
 		</div>
 	</div>
 </SectionContainer>
