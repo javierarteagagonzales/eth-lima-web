@@ -65,15 +65,38 @@
 @import "tailwindcss";
 
 @theme {
+    /* --- ORIGINAL PALETTE (Archivada) --- */
+    /*
     --color-primary: #4138FF;
     --color-primary-dark: #332ACC;
     --color-secondary: #000000;
     --color-accent: #E94E1B;
     --color-teal: #008D7D;
-
     --color-bg-0: #05060A;
     --color-bg-1: #0B0D14;
     --color-bg-2: #101324;
+    */
+
+    /* --- ENHANCED PALETTE --- */
+    --color-primary: #4138FF;
+    --color-primary-light: #6B65FF;
+    --color-primary-dark: #2217C9;
+    
+    --color-secondary: #F1F5F9;
+    --color-secondary-dark: #94A3B8;
+    
+    --color-accent: #FF5A1F;
+    --color-accent-glow: rgba(255, 90, 31, 0.4);
+    
+    --color-teal: #00F0C8;
+    --color-teal-glow: rgba(0, 240, 200, 0.4);
+
+    --color-bg-0: #030408;
+    --color-bg-1: #0A0D18;
+    --color-bg-2: #13172E;
+    
+    --color-glass: rgba(19, 23, 46, 0.6);
+    --color-glass-border: rgba(255, 255, 255, 0.08);
 
     --font-sans: "Helvetica Neue Custom", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
