@@ -7,12 +7,12 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<SectionContainer id="comunidad" class="bg-white overflow-hidden pt-24 pb-24">
+<SectionContainer id="comunidad" class="bg-[var(--color-bg-0)] overflow-hidden pt-24 pb-24">
 	<div class="flex flex-col items-center text-center gap-10 relative z-10">
 		<div class="flex flex-col gap-6 max-w-2xl">
 			<h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight" set:html={t('cta.title')}>
 			</h2>
-			<p class="text-lg md:text-xl text-neutral-600 font-medium">
+			<p class="text-lg md:text-xl text-[#475569] font-medium">
 				{t('cta.description')}
 			</p>
 		</div>
@@ -22,10 +22,10 @@ const t = useTranslations(lang);
 		</Button>
 
 		<div class="mt-20 w-full">
-			<h1 class="text-[12vw] font-bold leading-none tracking-tighter text-black select-none opacity-[0.03] absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap pointer-events-none">
+			<h1 class="text-[12vw] font-bold leading-none tracking-tighter text-[#0F172A] select-none opacity-[0.03] absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap pointer-events-none">
 				COMETHLIMA
 			</h1>
-			<h1 class="text-[12vw] font-bold leading-none tracking-tighter text-black mt-12 md:mt-20">
+			<h1 class="text-[12vw] font-bold leading-none tracking-tighter text-[var(--color-primary-light)] opacity-40 mt-12 md:mt-20">
 				ComEthLima
 			</h1>
 		</div>

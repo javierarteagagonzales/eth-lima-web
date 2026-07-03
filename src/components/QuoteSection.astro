@@ -6,9 +6,9 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<SectionContainer class="bg-neutral-100 flex items-center min-h-screen pt-40 pb-24">
+<SectionContainer class="bg-[var(--color-bg-1)] flex items-center min-h-screen pt-40 pb-24">
 	<div class="flex flex-col gap-12 w-full max-w-4xl mx-auto">
-		<h2 class="text-3xl sm:text-4xl md:text-6xl font-bold text-center leading-[1] tracking-tighter">
+		<h2 class="text-3xl sm:text-4xl md:text-6xl font-bold text-center leading-[1] tracking-tighter text-[#0F172A]">
 			{t('quote.text')}
 		</h2>
 	</div>

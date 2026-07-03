@@ -34,7 +34,7 @@ const toggleLangHref = lang === 'es'
 			<ul class="flex items-center gap-6">
 				{navLinks.map(link => (
 					<li>
-						<a href={link.href} class="text-[11px] font-bold uppercase tracking-widest hover:text-primary transition-colors">
+						<a href={link.href} class="text-[11px] font-bold uppercase tracking-widest hover:text-[var(--color-primary)] transition-colors">
 							{link.label}
 						</a>
 					</li>
@@ -43,14 +43,14 @@ const toggleLangHref = lang === 'es'
 			
 			<div class="h-4 w-[1px] bg-white/20 ml-2"></div>
 			
-			<a href={toggleLangHref} class="text-[11px] font-bold uppercase tracking-widest hover:text-primary transition-colors px-2 py-1 rounded border border-white/10 bg-white/5">
+			<a href={toggleLangHref} class="text-[11px] font-bold uppercase tracking-widest hover:text-[var(--color-primary-light)] transition-colors px-2 py-1 rounded border border-white/10 bg-white/5">
 				{lang === 'es' ? 'EN' : 'ES'}
 			</a>
 		</div>
 
 		<!-- Mobile Menu Button -->
 		<div class="flex items-center gap-2 md:hidden">
-			<a href={toggleLangHref} class="text-[11px] font-bold uppercase tracking-widest hover:text-primary transition-colors px-3 py-1.5 rounded border border-white/10 bg-white/5">
+			<a href={toggleLangHref} class="text-[11px] font-bold uppercase tracking-widest hover:text-[var(--color-primary-light)] transition-colors px-3 py-1.5 rounded border border-white/10 bg-white/5">
 				{lang === 'es' ? 'EN' : 'ES'}
 			</a>
 			<button id="mobile-menu-btn" class="p-2 text-white" aria-label="Menu">
@@ -65,7 +65,7 @@ const toggleLangHref = lang === 'es'
 		<ul class="flex flex-col items-center gap-6">
 			{navLinks.map(link => (
 				<li>
-					<a href={link.href} class="text-xl font-bold uppercase tracking-tighter text-white hover:text-primary transition-colors">
+					<a href={link.href} class="text-xl font-bold uppercase tracking-tighter text-white hover:text-[var(--color-primary-light)] transition-colors">
 						{link.label}
 					</a>
 				</li>

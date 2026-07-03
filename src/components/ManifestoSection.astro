@@ -6,16 +6,16 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<SectionContainer id="manifiesto" class="bg-neutral-50 pt-40 pb-24 min-h-screen flex items-center justify-center">
+<SectionContainer id="manifiesto" class="bg-[var(--color-bg-2)] pt-40 pb-24 min-h-screen flex items-center justify-center">
 	<div class="flex flex-col items-center text-center gap-12 max-w-4xl mx-auto w-full">
 		<!-- Typography Content -->
 		<div class="flex flex-col gap-6">
-			<h2 class="text-4xl sm:text-6xl md:text-7xl font-bold leading-[0.85] tracking-tighter text-primary flex items-center justify-center gap-4 sm:gap-6">
-				<span class="w-3 h-3 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-primary rotate-45 shrink-0"></span>
+			<h2 class="text-4xl sm:text-6xl md:text-7xl font-bold leading-[0.85] tracking-tighter text-[var(--color-primary)] flex items-center justify-center gap-4 sm:gap-6">
+				<span class="w-3 h-3 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-[var(--color-primary)] rotate-45 shrink-0"></span>
 				{t('manifesto.title')}
-				<span class="w-3 h-3 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-primary rotate-45 shrink-0"></span>
+				<span class="w-3 h-3 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-[var(--color-primary)] rotate-45 shrink-0"></span>
 			</h2>
-			<p class="text-lg md:text-2xl text-neutral-600 leading-tight font-medium max-w-xl mx-auto">
+			<p class="text-lg md:text-2xl text-[#475569] leading-tight font-medium max-w-xl mx-auto">
 				{t('manifesto.description')}
 			</p>
 		</div>

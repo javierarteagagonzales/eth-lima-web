@@ -19,29 +19,28 @@ const eventDate = new Date("2026-05-20T08:00:00");
 		/>
 	</div>
 	
-	<!-- Background Decoration -->
-	<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-6xl aspect-square bg-primary/5 blur-[120px] rounded-full -z-10"></div>
+	<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-6xl aspect-square bg-[var(--color-primary)]/10 blur-[120px] rounded-full -z-10"></div>
 
 	<div class="relative w-full max-w-7xl mx-auto flex flex-col items-center flex-grow justify-center gap-6 md:gap-10">
 		<!-- Lateral Info for Desktop -->
 		<div class="hidden lg:flex absolute inset-x-0 top-1/2 -translate-y-1/2 items-center justify-between pointer-events-none px-4">
 			<div class="flex flex-col gap-1 text-left">
-				<span class="text-2xl md:text-3xl font-bold text-black leading-[0.9] tracking-tighter">{t('hero.date')}</span>
-				<span class="text-2xl md:text-3xl font-bold text-black leading-[0.9] tracking-tighter">{t('hero.year')}</span>
+				<span class="text-2xl md:text-3xl font-bold text-[#0F172A] leading-[0.9] tracking-tighter">{t('hero.date')}</span>
+				<span class="text-2xl md:text-3xl font-bold text-[#0F172A] leading-[0.9] tracking-tighter">{t('hero.year')}</span>
 			</div>
 			
 			<div class="flex flex-col gap-1 text-right max-w-[180px]">
-				<span class="text-lg md:text-xl font-bold text-black leading-[0.9] tracking-tighter">{t('hero.location')}</span>
+				<span class="text-lg md:text-xl font-bold text-[#0F172A] leading-[0.9] tracking-tighter">{t('hero.location')}</span>
 				<span class="text-xs font-medium text-neutral-500 leading-tight">{t('hero.address')}</span>
 			</div>
 		</div>
 
 		<!-- Central Content -->
 		<div class="flex flex-col items-center text-center gap-4 md:gap-6 max-w-4xl z-10 px-4">
-			<h1 class="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.85] tracking-tighter text-black" set:html={t('hero.title')}>
+			<h1 class="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.85] tracking-tighter text-[#0F172A] drop-shadow-sm" set:html={t('hero.title')}>
 			</h1>
 			
-			<Button href="#registro" size="md" class="px-8 py-3 rounded-xl text-xs font-bold uppercase tracking-widest shadow-lg">
+			<Button href="#registro" size="md" class="px-8 py-3 rounded-xl text-xs font-bold uppercase tracking-widest shadow-lg shadow-[var(--color-primary)]/20 hover:shadow-[var(--color-primary)]/40 transition-shadow">
 				{t('hero.cta')}
 			</Button>
 		</div>
@@ -49,34 +48,34 @@ const eventDate = new Date("2026-05-20T08:00:00");
 		<!-- Mobile Info (Stacks) -->
 		<div class="flex lg:hidden flex-col items-center gap-3 text-center">
 			<div class="flex flex-col gap-0.5">
-				<span class="text-xl font-bold text-black leading-none">{t('hero.date')} {t('hero.year')}</span>
+				<span class="text-xl font-bold text-[#0F172A] leading-none">{t('hero.date')} {t('hero.year')}</span>
 			</div>
 			<div class="flex flex-col gap-0.5">
-				<span class="text-sm font-bold text-black leading-tight">{t('hero.location')}</span>
+				<span class="text-sm font-bold text-[#0F172A] leading-tight">{t('hero.location')}</span>
 				<span class="text-[10px] font-medium text-neutral-500 leading-tight">{t('hero.address')}</span>
 			</div>
 		</div>
 
 		<!-- Countdown Box -->
-		<div class="w-full max-w-3xl bg-neutral-200/80 backdrop-blur-sm rounded-[30px] md:rounded-[40px] p-6 md:p-8 flex flex-col items-center gap-4 md:gap-6 mt-2 md:mt-8">
-			<h3 class="text-lg md:text-xl font-bold text-black leading-none tracking-tight">{t('hero.countdown')}</h3>
+		<div class="w-full max-w-3xl bg-[var(--color-glass)] backdrop-blur-md border border-[var(--color-glass-border)] rounded-[30px] md:rounded-[40px] p-6 md:p-8 flex flex-col items-center gap-4 md:gap-6 mt-2 md:mt-8 shadow-xl">
+			<h3 class="text-lg md:text-xl font-bold text-[var(--color-primary)] leading-none tracking-tight">{t('hero.countdown')}</h3>
 			
 			<div id="countdown" class="grid grid-cols-4 gap-4 md:gap-10 text-center items-end">
 				<div class="flex flex-col gap-1 md:gap-2">
-					<span id="months" class="text-3xl md:text-5xl lg:text-6xl font-bold text-black leading-none">00</span>
-					<span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-neutral-500">{t('hero.months')}</span>
+					<span id="months" class="text-3xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] leading-none">00</span>
+					<span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-[#475569]">{t('hero.months')}</span>
 				</div>
 				<div class="flex flex-col gap-1 md:gap-2">
-					<span id="days" class="text-3xl md:text-5xl lg:text-6xl font-bold text-black leading-none">00</span>
-					<span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-neutral-500">{t('hero.days')}</span>
+					<span id="days" class="text-3xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] leading-none">00</span>
+					<span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-[#475569]">{t('hero.days')}</span>
 				</div>
 				<div class="flex flex-col gap-1 md:gap-2">
-					<span id="hours" class="text-3xl md:text-5xl lg:text-6xl font-bold text-black leading-none">00</span>
-					<span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-neutral-500">{t('hero.hours')}</span>
+					<span id="hours" class="text-3xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] leading-none">00</span>
+					<span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-[#475569]">{t('hero.hours')}</span>
 				</div>
 				<div class="flex flex-col gap-1 md:gap-2">
-					<span id="mins" class="text-3xl md:text-5xl lg:text-6xl font-bold text-black leading-none">00</span>
-					<span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-neutral-500">{t('hero.mins')}</span>
+					<span id="mins" class="text-3xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] leading-none">00</span>
+					<span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-[#475569]">{t('hero.mins')}</span>
 				</div>
 			</div>
 		</div>
